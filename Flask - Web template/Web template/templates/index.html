@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Web template</title>
+    <link rel="stylesheet" href="../static/nicepage.css" media="screen">
+<link rel="stylesheet" href="../static/Home.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 4.0.3, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+
+
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": ""
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Home">
+    <meta property="og:type" content="website">
+    <script type="text/javascript">
+            var remaining_energy = 30
+            function showAlert() {
+            var flag = 0;
+            var threshold_energy = 15;
+            var e = {{  energy  }};
+            var calculated_energy = remaining_energy - e;
+            if(calculated_energy<threshold_energy)
+            {
+                flag=1;
+            }
+            if (flag == 1 || e == 2.55334) {
+              alert("Energy is less than threshold! Please refuel the generator.");
+            }
+            else {
+              document.getElementById("p").innerHTML = "Sufficient energy is remaining...";
+            }
+            remaining_energy=calculated_energy;
+        }
+    </script>
+  </head>
+  <body data-home-page="Home.html" data-home-page-title="Home" class="u-body"><header class="u-clearfix u-header u-header" id="sec-9e24"><div class="u-clearfix u-sheet u-sheet-1">
+        <h3 class="u-align-center u-headline u-text u-text-1">
+          <a href="/"><b>Supervised Agricultural Management in Remotely Accessible Area</b>
+          </a>
+        </h3>
+        <h3 class="u-headline u-text u-text-2">
+          <a href="/"></a>
+        </h3>
+      </div></header>
+    <section class="u-align-center u-clearfix u-section-1" id="sec-4fde">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-form u-form-1">
+          <form method="POST" enctype="multipart/form-data">
+            <input type="number" name="days" id="days" placeholder="Enter day" min="31"/>
+            <!--- <input type="text" name="threshold_energy" id="threshold_energy" placeholder="Enter threshold energy"/> --->
+            <input type="submit"/>
+          </form>
+          <p>NOTE: The day value must be greater than 30 for the RNN to sample input.</p>
+        </div>
+        <div class="u-table u-table-responsive u-table-1">
+          <table class="u-table-entity u-table-entity-1">
+            <colgroup>
+              <col width="11%">
+              <col width="11%">
+              <col width="11%">
+              <col width="11%">
+              <col width="11%">
+              <col width="11.2%">
+              <col width="11%">
+              <col width="11.8%">
+              <col width="11%">
+            </colgroup>
+            <thead class="u-palette-4-base u-table-header u-table-header-1">
+              <tr style="height: 33px;">
+                <th class="u-border-1 u-border-palette-4-base u-table-cell">Date and Time</th>
+                <th class="u-border-1 u-border-palette-4-base u-table-cell">Day</th>
+                <th class="u-border-1 u-border-palette-4-base u-table-cell">Carbon Monoxide level</th>
+                <th class="u-border-1 u-border-palette-4-base u-table-cell">Humidity</th>
+                <th class="u-border-1 u-border-palette-4-base u-table-cell">Light detection</th>
+                <th class="u-border-1 u-border-palette-4-base u-table-cell">LPG level</th>
+                <th class="u-border-1 u-border-palette-4-base u-table-cell">Motion detection</th>
+                <th class="u-border-1 u-border-palette-4-base u-table-cell">Smoke level</th>
+                <th class="u-border-1 u-border-palette-4-base u-table-cell">Temperature</th>
+              </tr>
+            </thead>
+            <tbody class="u-table-body">
+              <tr style="height: 75px;">
+                <td class="u-border-1 u-border-grey-30 u-table-cell">{{  date  }}</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">{{  day_selected  }}</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">{{  co  }}</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">{{  humidity  }}</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">{{  light  }}</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">{{  lpg  }}</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">{{  motion  }}</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">{{  smoke  }}</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">{{  temp  }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <div>
+            <h4 class="u-align-center">Predicted Humidity Value for Tomorrow : {{  y_data  }}</h4>
+          </div>
+          <div>
+            <h4 class="u-align-center">Predicted Energy Consumption for Tomorrow : {{  energy  }} W</h4>
+          </div>
+          <br>
+          <button name="b" onclick="showAlert()">Simulate</button>
+          <p id="p"></p>
+        </div>
+      </div>
+      <!--<div>
+        <h4>Simulator</h4>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="number" name="threshold_energy" id="threshold_energy" placeholder="Enter threshold energy"/>
+            <input type="submit"/>
+          </form>
+        <p>{{  text  }}</p>
+      </div> -->
+    </section>
+
+
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-9d07"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <p class="u-align-right u-small-text u-text u-text-variant u-text-1">19BCT0168 Hartej Singh<br>19BCT0166 Aniruddha Sharma<br>19BCT0179 Saurabh Dahale<br>19BCT0188 Parth Maitrey
+        </p>
+      </div></footer>
+
+  </body>
+</html>
