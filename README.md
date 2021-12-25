@@ -1,4 +1,6 @@
---> Arduino Code - the GSM connection:
+Dataset link: https://www.kaggle.com/garystafford/environmental-sensor-data-132k
+
+# Arduino Code - the GSM connection:
 Libraries Included and their Functions:
 GSM.h - used to connect to networks to send and receive messages from the Arduino to the Concerned Device.
 
@@ -14,7 +16,7 @@ Implementation Steps of the Arduino Code:
 
 
 
---> The AI Model - Humidity and Temperature prediction:
+# The AI Model - Humidity and Temperature prediction:
 Libraries Included and their functions:
 Numpy - mathematical tools
 Pandas - data management and analysis
@@ -33,7 +35,7 @@ Implementation Steps of the AI model:
 
 
 
---> Mathematical Part Implementation:
+# Mathematical Part Implementation:
 Imnplementation Steps:
 1.	The predicted humidity and temperature are taken as input.
 2.	Calculate Saturation Vapour Pressure using the temperature.
@@ -52,7 +54,7 @@ Imnplementation Steps:
 
 
 
---> Flask Code (Back-end of the Interface):
+# Flask Code (Back-end of the Interface):
 Libraries Included and their functions:
 Numpy - mathematical tools
 Pandas - data management and analysis
@@ -72,7 +74,7 @@ Implementation Steps of the Flask model:
 
 
 
---> WebPage Code (Front-end of the Interface)
+# WebPage Code (Front-end of the Interface)
 Implementation Steps:
 1. Implement and include the necessary css scripts.
 2. Include the javascript part used. 
